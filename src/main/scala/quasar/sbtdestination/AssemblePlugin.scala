@@ -203,7 +203,7 @@ object AssemblePlugin {
   @SuppressWarnings(Array("org.wartremover.warts.Equals"))
   private def moduleIdToDependency(moduleId: ModuleID, scalaBinaryVersion: String): Dependency = {
     val v =
-      if (moduleId.crossVersion == CrossVersion.Disabled()) ""
+      if (moduleId.crossVersion == CrossVersion.disabled) ""
       else "_" + scalaBinaryVersion
     Dependency(
       Module(Organization(moduleId.organization), ModuleName(moduleId.name + v)),
